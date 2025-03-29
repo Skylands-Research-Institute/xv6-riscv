@@ -168,6 +168,9 @@ QEMUOPTS += -global virtio-mmio.force-legacy=false
 QEMUOPTS += -drive file=fs.img,if=none,format=raw,id=x0
 QEMUOPTS += -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
 
+# JJS added all target for Eclipse build
+all: $K/kernel fs.img
+
 qemu: $K/kernel fs.img
 	$(QEMU) $(QEMUOPTS)
 
